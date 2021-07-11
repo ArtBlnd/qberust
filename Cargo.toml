@@ -1,0 +1,10 @@
+[workspace]
+
+members = [
+    "qberust-core",
+    "qberust-executor",
+    "qberust-ir",
+    "qberust-mcgen",
+    "qberust-native-codegen",
+    "qberust-utils",
+]

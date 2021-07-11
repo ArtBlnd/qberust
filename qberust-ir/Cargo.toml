@@ -1,0 +1,11 @@
+[package]
+name = "qberust-ir"
+version = "0.1.0"
+authors = ["artblnd <junryoungju@gmail.com>"]
+edition = "2018"
+
+[lib]
+path = "lib.rs"
+
+[dependencies]
+qberust-core = { path = "../qberust-core" }
