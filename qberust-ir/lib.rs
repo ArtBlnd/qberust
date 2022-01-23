@@ -1,20 +1,8 @@
-mod block;
-pub use block::*;
-mod function;
-pub use function::*;
-mod constant;
-pub use constant::*;
+mod alignment;
 mod control;
-pub use control::*;
-mod inst;
-pub use inst::*;
-mod operator;
-pub use operator::*;
+mod symbol;
 mod types;
-pub use types::*;
-mod value;
-pub use value::*;
-mod value_span;
-pub use value_span::*;
+mod values;
+mod visibility;
 
-struct IRBuilder {}
+use std::sync::Arc;

@@ -2,10 +2,11 @@
 name = "qberust-ir"
 version = "0.1.0"
 authors = ["artblnd <junryoungju@gmail.com>"]
-edition = "2018"
+edition = "2021"
 
 [lib]
 path = "lib.rs"
 
 [dependencies]
+parking_lot = "0.11.2"
 qberust-core = { path = "../qberust-core" }

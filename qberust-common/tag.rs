@@ -1,9 +1,5 @@
 use std::sync::{Arc, Weak};
 
-struct Tag {
+struct Tag {}
 
-}
-
-struct TagRef {
-    
-}
+struct TagRef {}
