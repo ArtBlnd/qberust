@@ -107,7 +107,7 @@ impl BinaryOp {
         let rhs = self.get_rhs();
         assert!(lhs.get_type() == rhs.get_type());
 
-        todo!();
+        lhs.get_type().get_primitive_type().unwrap().clone()
     }
 
     pub fn get_rhs(&self) -> &Value {

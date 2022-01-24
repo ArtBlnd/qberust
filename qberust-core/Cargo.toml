@@ -8,4 +8,5 @@ edition = "2018"
 path = "lib.rs"
 
 [dependencies]
+qberust-ir = { path = "../qberust-ir" }
 thiserror = "*"

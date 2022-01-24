@@ -93,6 +93,7 @@ dependencies = [
 name = "qberust-core"
 version = "0.1.0"
 dependencies = [
+ "qberust-ir",
  "thiserror",
 ]
 
@@ -105,7 +106,6 @@ name = "qberust-ir"
 version = "0.1.0"
 dependencies = [
  "parking_lot",
- "qberust-core",
  "rand",
  "thiserror",
 ]

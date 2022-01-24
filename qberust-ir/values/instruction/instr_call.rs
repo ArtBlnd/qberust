@@ -1,16 +1,11 @@
 use crate::abi::ABI;
 use crate::symbol::Symbol;
 use crate::types::Type;
+use crate::values::ValueRef;
 
 pub struct Call {
-    symbol: Symbol,
+    fn_symbol: Symbol,
+    arguments: Vec<ValueRef>,
 
-    // types
-    ret_ty: Type,
-    arg_ty: Vec<Type>,
-
-    // metadata
-    has_variadic: bool,
-    has_export: bool,
-    calling_conv: ABI,
+    abi: ABI,
 }

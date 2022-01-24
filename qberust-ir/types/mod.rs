@@ -5,8 +5,8 @@ pub use primitive::*;
 mod aggregate;
 pub use aggregate::*;
 
-use std::fmt::{Display, Formatter};
 use std::fmt::Result as FmtResult;
+use std::fmt::{Display, Formatter};
 
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub enum Type {
@@ -43,7 +43,7 @@ impl Type {
     }
 
     pub fn is_primitive(&self) -> bool {
-        self.get_primitve_type().is_some()
+        self.get_primitive_type().is_some()
     }
 
     pub fn is_aggregate(&self) -> bool {
@@ -57,7 +57,7 @@ impl Type {
         }
     }
 
-    pub fn get_primitve_type(&self) -> Option<&PrimitiveType> {
+    pub fn get_primitive_type(&self) -> Option<&PrimitiveType> {
         if let Self::Primitive(ty) = self {
             Some(ty)
         } else {
@@ -73,7 +73,6 @@ impl Type {
         }
     }
 }
-
 
 impl Display for Type {
     fn fmt(&self, f: &mut Formatter<'_>) -> FmtResult {
