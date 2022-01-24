@@ -24,29 +24,36 @@ impl Block {
     /// Set phi instruction on block
     /// only one phi instruction exists per one block unlike other instruction.
     pub fn set_phi(&self, phi: Phi) -> Option<Phi> {
-        let mut data = self.data.lock();
+        let mut data = self.data.try_lock().unwrap();
         mem::replace(&mut data.phi, Some(phi))
     }
 
     /// Set destination block of current block
     pub fn set_jmp(&self, jmp: Jumps) -> Jumps {
-        let mut data = self.data.lock();
+        let mut data = self.data.try_lock().unwrap();
         mem::replace(&mut data.jmp, jmp)
     }
 
+    /// Inserts value into value table and get reference
     pub fn insert_value(&self, value: Value) -> ValueRef {
-        todo!();
+        let mut data = self.data.try_lock().unwrap();
+        data.values.insert(value)
     }
 
-    pub fn remove_value(&self, vref: ValueRef) -> Value {
-        todo!();
+    /// removes value from value table
+    /// related value referenes will be invalidated.
+    pub fn remove_value(&self, vref: ValueRef) -> Option<Value> {
+        let mut data = self.data.try_lock().unwrap();
+        data.values.remove(vref)
     }
 
+    /// Visit inner block data.
+    /// you only have access internal block data by using this function because of locking.
     pub fn visit_data<F>(&self, f: F)
     where
         F: Fn(&BlockData),
     {
-        let data = self.data.lock();
+        let data = self.data.try_lock().unwrap();
         (f)(data.deref())
     }
 }

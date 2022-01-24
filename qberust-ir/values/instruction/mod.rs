@@ -6,6 +6,8 @@ mod instr_memory;
 pub use instr_memory::*;
 mod instr_cast;
 pub use instr_cast::*;
+mod instr_call;
+pub use instr_call::*;
 
 use crate::types::Type;
 

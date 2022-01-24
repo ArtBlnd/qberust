@@ -5,6 +5,9 @@ pub use primitive::*;
 mod aggregate;
 pub use aggregate::*;
 
+use std::fmt::{Display, Formatter};
+use std::fmt::Result as FmtResult;
+
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub enum Type {
     Primitive(PrimitiveType),
@@ -16,12 +19,14 @@ impl Type {
         match self {
             Type::Primitive(ty) => match ty {
                 PrimitiveType::Void => 0,
-                PrimitiveType::Byte => 1,
-                PrimitiveType::HalfWord => 2,
-                PrimitiveType::Word => 4,
-                PrimitiveType::Long => 8,
-                PrimitiveType::Single => 4,
-                PrimitiveType::Double => 8,
+
+                PrimitiveType::U8 | PrimitiveType::I8 => 1,
+                PrimitiveType::U16 | PrimitiveType::I16 => 2,
+                PrimitiveType::U32 | PrimitiveType::I32 => 4,
+                PrimitiveType::U64 | PrimitiveType::I64 => 8,
+
+                PrimitiveType::F32 => 4,
+                PrimitiveType::F64 => 8,
             },
 
             Type::Aggregate(ty) => match &ty.inner_types {
@@ -32,11 +37,20 @@ impl Type {
                 // Opaque has no base type
                 // it only has opaque size hints.
                 AggregateTypeKind::Opaque { size } => *size,
+                AggregateTypeKind::Pointer { size, .. } => *size,
             },
         }
     }
 
-    fn alignment(&self) -> Alignment {
+    pub fn is_primitive(&self) -> bool {
+        self.get_primitve_type().is_some()
+    }
+
+    pub fn is_aggregate(&self) -> bool {
+        self.get_aggregate_type().is_some()
+    }
+
+    pub fn alignment(&self) -> Alignment {
         match self {
             Type::Primitive(_) => Alignment::Inherited,
             Type::Aggregate(ty) => ty.align,
@@ -57,5 +71,12 @@ impl Type {
         } else {
             None
         }
+    }
+}
+
+
+impl Display for Type {
+    fn fmt(&self, f: &mut Formatter<'_>) -> FmtResult {
+        todo!()
     }
 }

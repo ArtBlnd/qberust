@@ -1,23 +1,32 @@
 use crate::types::PrimitiveType;
 use crate::values::Value;
 
-enum Cast {
-    ZeroExtend {
-        target: Box<Value>,
-        cast_to: PrimitiveType,
-    },
-    SignedExtend {
-        target: Box<Value>,
-        cast_to: PrimitiveType,
-    },
+enum CastKind {
+    /// Zero Extend
+    ZExt,
+
+    // Signed Extend
+    SExt,
+
+    /// Integer Casting
+    Integer,
+
+    /// Floating Point Casting
+    Fp,
+
+    /// Truncate
+    Trunc,
+}
+
+pub struct Cast {
+    target: Box<Value>,
+
+    cast_kind: CastKind,
+    cast_type: PrimitiveType,
 }
 
 impl Cast {
     pub fn get_type(&self) -> PrimitiveType {
-        match self {
-            Cast::ZeroExtend { cast_to, .. } | Cast::SignedExtend { cast_to, .. } => {
-                cast_to.clone()
-            }
-        }
+        self.cast_type.clone()
     }
 }

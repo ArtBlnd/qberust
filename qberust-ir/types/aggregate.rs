@@ -6,6 +6,7 @@ use crate::types::Type;
 pub enum AggregateTypeKind {
     Regular(Vec<Type>),
     Opaque { size: usize },
+    Pointer { size: usize, base_ty: Box<Type> },
 }
 
 #[derive(Debug, Clone, PartialEq, Eq)]

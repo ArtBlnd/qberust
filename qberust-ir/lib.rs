@@ -1,5 +1,7 @@
+mod abi;
 mod alignment;
 mod control;
+mod error;
 mod symbol;
 mod types;
 mod values;

@@ -3,14 +3,36 @@ use crate::values::{Constant, Instruction, Value, ValueRef};
 use std::iter::Iterator;
 
 pub struct ValueTable {
-    id_index: usize,
     id_table: usize,
     table: Vec<Option<Value>>,
 }
 
 impl ValueTable {
     pub fn new() -> Self {
-        todo!();
+        Self {
+            id_table: rand::random(),
+            table: Vec::new(),
+        }
+    }
+
+    pub fn insert(&mut self, value: impl Into<Value>) -> ValueRef {
+        self.table.push(Some(value.into()));
+        ValueRef {
+            id_table: self.id_table,
+            id: self.table.len() - 1,
+        }
+    }
+
+    pub fn remove(&mut self, vref: ValueRef) -> Option<Value> {
+        if vref.id_table != self.id_table {
+            return None;
+        }
+
+        if let Some(v) = self.table.get_mut(vref.id) {
+            v.take()
+        } else {
+            None
+        }
     }
 
     pub fn get(&self, vref: impl AsRef<ValueRef>) -> Option<&Value> {
