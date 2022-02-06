@@ -1,6 +1,6 @@
 use crate::symbol::{Symbol, Symbolic};
-use crate::values::instruction::Phi;
-use crate::values::{Value, ValueRef, ValueTable};
+use crate::ir::values::instruction::Phi;
+use crate::ir::values::{Value, ValueRef, ValueTable};
 
 use std::mem;
 use std::ops::Deref;

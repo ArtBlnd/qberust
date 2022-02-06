@@ -1,5 +1,5 @@
-use crate::types::{PrimitiveType, Type};
-use crate::values::{Value, ValueRef};
+use crate::ir::types::{PrimitiveType, Type};
+use crate::ir::values::{Value, ValueRef};
 
 pub enum MemoryOp {
     Store { src: ValueRef, dst: ValueRef },

@@ -1,5 +1,5 @@
-use crate::types::PrimitiveType;
-use crate::values::Value;
+use crate::ir::types::PrimitiveType;
+use crate::ir::values::Value;
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum BinaryOpKind {

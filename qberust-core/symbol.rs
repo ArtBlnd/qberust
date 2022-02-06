@@ -45,5 +45,3 @@ impl Hash for Symbol {
         self.inner.data_ptr().hash(state);
     }
 }
-
-pub struct SymbolTable {}

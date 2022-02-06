@@ -10,7 +10,7 @@ pub use value_ref::*;
 pub mod instruction;
 use instruction::Instruction;
 
-use crate::types::Type;
+use crate::ir::types::Type;
 
 use std::ops::{Deref, DerefMut};
 

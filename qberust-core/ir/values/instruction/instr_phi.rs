@@ -1,7 +1,7 @@
-use crate::control::Block;
+use crate::ir::control::Block;
+use crate::ir::types::Type;
+use crate::ir::values::Value;
 use crate::symbol::{Symbol, Symbolic};
-use crate::types::Type;
-use crate::values::Value;
 
 use std::collections::HashMap;
 

@@ -1,4 +1,4 @@
-use crate::values::{Constant, Instruction, Value, ValueRef};
+use crate::ir::values::{Constant, Instruction, Value, ValueRef};
 
 use std::iter::Iterator;
 

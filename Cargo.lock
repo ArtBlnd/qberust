@@ -93,22 +93,14 @@ dependencies = [
 name = "qberust-core"
 version = "0.1.0"
 dependencies = [
- "qberust-ir",
+ "parking_lot",
+ "rand",
  "thiserror",
 ]
 
 [[package]]
 name = "qberust-executor"
 version = "0.1.0"
-
-[[package]]
-name = "qberust-ir"
-version = "0.1.0"
-dependencies = [
- "parking_lot",
- "rand",
- "thiserror",
-]
 
 [[package]]
 name = "qberust-mcgen"

@@ -1,6 +1,6 @@
-use crate::abi::ABI;
+use crate::abi::CallingConv;
+use crate::ir::types::Type;
 use crate::symbol::{Symbol, Symbolic};
-use crate::types::Type;
 
 pub struct Function {
     symbol: Symbol,
@@ -12,7 +12,7 @@ pub struct Function {
     // metadata
     has_variadic: bool,
     has_export: bool,
-    abi: ABI,
+    calling_conv: CallingConv,
 }
 
 impl Symbolic for Function {

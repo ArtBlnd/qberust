@@ -1,9 +1,9 @@
+use crate::ir::types::Type;
+use crate::ir::values::Constant;
 use crate::symbol::{Symbol, Symbolic};
-use crate::types::Type;
-use crate::values::Constant;
-use crate::visibility::Visibility;
+use crate::abi::Visibility;
 
-use crate::types::PrimitiveType;
+use crate::ir::types::PrimitiveType;
 
 pub enum DataItem {
     Symbol {

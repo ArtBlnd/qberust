@@ -1,6 +1,6 @@
-use crate::alignment::Alignment;
+use crate::abi::Alignment;
+use crate::ir::types::Type;
 use crate::symbol::{Symbol, Symbolic};
-use crate::types::Type;
 
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub enum AggregateTypeKind {

@@ -4,7 +4,6 @@ members = [
     "qberust-common",
     "qberust-core",
     "qberust-executor",
-    "qberust-ir",
     "qberust-mcgen",
     "qberust-native-codegen",
 ]

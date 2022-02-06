@@ -1,6 +1,6 @@
 use thiserror::Error;
 
-use crate::types::Type;
+use crate::ir::types::Type;
 
 #[derive(Error, Debug)]
 enum Error {

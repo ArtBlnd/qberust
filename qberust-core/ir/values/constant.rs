@@ -1,5 +1,5 @@
+use crate::ir::types::{PrimitiveType, Type};
 use crate::symbol::Symbol;
-use crate::types::{PrimitiveType, Type};
 
 pub enum Constant {
     I64(i64),

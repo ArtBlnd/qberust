@@ -1,4 +1,4 @@
-use crate::alignment::Alignment;
+use crate::abi::Alignment;
 
 mod primitive;
 pub use primitive::*;

@@ -9,7 +9,7 @@ pub use instr_cast::*;
 mod instr_call;
 pub use instr_call::*;
 
-use crate::types::Type;
+use crate::ir::types::Type;
 
 pub enum Instruction {
     Phi(Phi),
