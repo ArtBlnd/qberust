@@ -1,4 +1,4 @@
-use crate::symbol::{Symbol, Symbolic};
+use crate::ir::symbol::{Symbol, Symbolic};
 use crate::ir::values::instruction::Phi;
 use crate::ir::values::{Value, ValueRef, ValueTable};
 

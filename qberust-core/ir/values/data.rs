@@ -1,6 +1,6 @@
 use crate::ir::types::Type;
 use crate::ir::values::Constant;
-use crate::symbol::{Symbol, Symbolic};
+use crate::ir::symbol::{Symbol, Symbolic};
 use crate::abi::Visibility;
 
 use crate::ir::types::PrimitiveType;

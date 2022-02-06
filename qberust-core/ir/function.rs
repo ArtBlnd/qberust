@@ -1,6 +1,6 @@
 use crate::abi::CallingConv;
 use crate::ir::types::Type;
-use crate::symbol::{Symbol, Symbolic};
+use crate::ir::symbol::{Symbol, Symbolic};
 
 pub struct Function {
     symbol: Symbol,
